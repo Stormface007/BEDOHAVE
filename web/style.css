@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #009900;
+}
+
+#loginDiv {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 10vh;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 2px solid black;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.udalost-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.udalost-buttons button {
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+button {
+  padding: 0.6rem 1.2rem;
+  background-color: white;
+  color: #009900;
+  border: 2px solid #009900;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0.5rem;
+}
+
+#appDiv {
+  padding: 2rem;
+  color: black;
+  text-align: center;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+#zahonyTable {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+  margin-top: 1rem;
+  border: 2px solid black;
+}
+
+#zahonyTable th, #zahonyTable td {
+  border: 2px solid black;
+  padding: 0.5rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  margin: 5% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+.dimensions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dimensions input {
+  flex: 1;
+  background: white;
+  border: 2px solid black;
+  padding: 0.5rem;
+}
+
+.plocha {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+#zahonVizualizace {
+  margin: 1rem auto;
+  background-color: #d2b48c; /* světle hnědá */
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+  max-height: 200px;
+  transition: all 0.3s ease;
+}

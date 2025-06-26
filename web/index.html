@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zahrádkářský systém</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loginDiv">
+    <img src="img/logo.png" alt="Logo" class="logo" />
+    <input type="text" id="username" placeholder="Uživatelské jméno" />
+    <input type="password" id="password" placeholder="Heslo" />
+    <button onclick="login()">Přihlásit</button>
+    <div id="loginMsg"></div>
+  </div>
+
+  <div id="appDiv" style="display: none;">
+    <h2>Moje záhony</h2>
+    <button onclick="logout()">Odhlásit se</button>
+
+    <div class="table-actions">
+      <button onclick="deleteSelected()">🗑️ Smazat označené</button>
+    </div>
+
+    <div class="table-container">
+      <table id="zahonyTable">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Název záhonu</th>
+            <th class="velikost-column">Velikost</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h3>Přidat nový záhon</h3>
+    <input type="text" id="newNazev" placeholder="Název záhonu" />
+    <input type="number" id="newDelka" placeholder="Délka (m)" />
+    <input type="number" id="newSirka" placeholder="Šířka (m)" />
+    <button onclick="addZahon()">Přidat</button>
+  </div>
+
+  <!-- MODÁLNÍ OKNO -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+
+    <!-- Hlavní část pro úpravu záhonu -->
+    <div id="modalViewDefault">
+      <h3>Úprava záhonu</h3>
+
+      <input type="text" id="editNazev" placeholder="Název záhonu" />
+
+      <div class="dimensions">
+        <input type="number" id="editDelka" placeholder="Délka (m)" oninput="updatePlocha()" />
+        <input type="number" id="editSirka" placeholder="Šířka (m)" oninput="updatePlocha()" />
+      </div>
+
+      <div class="plocha">Plocha: <span id="vypocetPlochy">0</span> m²</div>
+      <div id="zahonVizualizace"></div>
+
+      <!-- Tlačítka pro přepínání událostí -->
+      <div class="udalost-buttons">
+        <button onclick="showUdalostForm('seti')">Setí</button>
+        <button onclick="showUdalostForm('hnojeni')">Hnojení</button>
+        <button onclick="showUdalostForm('sklizen')">Sklizeň</button>
+      </div>
+
+      <button onclick="saveZahon()">Uložit změny</button>
+      <button onclick="closeModal()">Zavřít</button>
+    </div>
+
+    <!-- Dynamická část pro konkrétní událost -->
+    <div id="modalViewUdalost" style="display: none;">
+      <div id="udalostFormContainer"></div>
+      <button id="btnZpet" onclick="zpetNaDetailZahonu()">Zpět</button>
+    </div>
+
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
