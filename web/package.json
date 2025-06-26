@@ -1,5 +1,5 @@
 {
-  "name": "BeDoHave",
+  "name": "web",
   "version": "1.0.0",
   "description": "Zahrádkářský systém s Netlify Functions",
   "main": "index.js",
